@@ -1,0 +1,105 @@
+ReactJS - 
+What  -  Frontend javascript library for building UI.
+
+Framework - nextjs 
+library - collection of functions 
+user can decide when to call functions
+
+
+Framework - collection of library
+MVC 
+
+==============
+jQuery library - multi Page Application 
+html + js  
+jQuery.js import 
+callback functions
+
+==========================================
+Why  - 
+features - 
+1. SPA (single Page application)
+index.html 
+2. component  -  reusable 
+function or class 
+
+js function/class return html code (JSX )
+component return JSX (javascript extension , javascript and XML , javascript and html)
+
+component  = basic reusable building block of code to perform a specific task. 
+
+function home(){
+    return ["hello","rfer","ere"]
+}
+home() 
+
+function Home(){
+    return (
+        <div>
+            <h1>Hello</h1>
+            <h1>Hello <span></span> </h1>
+            <h1>Hello</h1>
+            <h1>Hello</h1>
+        </div>
+        )
+}
+<Home></Home> or <Home/>
+
+All html tags - small letters
+<br></br> or <br/>
+<table></table> 
+
+3. React Fiber - 
+
+virtual DOM - Copy of Real DOM 
+Who creates DOM  - browsers creates DOM 
+react does copy of real DOM - virtual DOM 
+
+===================================================================
+vsc and nodejs install 
+
+javascript  basics - ES6 features
+events 
+ternary operator 
+map,filter, reduce, find, findIndex
+
+npm - node package manager 
+collection of packages/ libraries  for javascript 
+
+npm i create-react-app 
+create-react-app appname 
+
+npx create-react-app appname 
+
+react19 
+vite tool - next generation frontend tool 
+
+npm create vite@latest 
+
+
+dev:"vite" // npm run dev => localhost:5173
+start:"vite --port 3000" // npm start => localhost:3000 
+
+class -> className
+for -> htmlFor 
+
+========================================================================
+components - 
+nested 
+
+git install 
+github - account create 
+
+
+props - properties 
+
+
+
+
+
+
+
+
+
+
+
