@@ -28,9 +28,9 @@ import React from 'react'
 
 const FirstFuncomp = () => {
   return (
-    <div>
+    <>
       <h1>Hello from first functional comp</h1>
-    </div>
+    </>
   )
 }
 

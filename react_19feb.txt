@@ -6,3 +6,34 @@ v1
 v1.2 
 v1.3 
 v1.4
+
+
+git and github  - 
+
+1.<React.Fragment></React.Fragment>
+2.import {Fragment} from 'react' 
+<Fragment></Fragment>
+3. <></> => shorthand of Fragment
+
+
+event -  bind()
+variable - 
+
+state -  react variable 
+class -  state 
+functional comp =  hooks (readymade functions)
+1. useState 
+2. useEffect 
+3. useRef 
+4. useCallback 
+5. useMemo 
+6. useImperativeHandle 
+7. useTransition
+8. useContext etc.
+9. custom hook 
+
+condition -  ?: , && , || 
+======================================
+state 
+css 
+array 

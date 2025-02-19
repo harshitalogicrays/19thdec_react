@@ -23,7 +23,7 @@ import FirstFuncomp from './FirstFuncomp'
 
 const Propsdemoinfun = ({title,username="Ram",mobile,isActive}) => {
   return (
-    <div>
+    <React.Fragment>
       <h1>{title}</h1>
       <h2>{username}</h2>
       {/* {isActive ? <h3>{username} is active</h3> : "user is not active" }<br/>
@@ -42,7 +42,7 @@ const Propsdemoinfun = ({title,username="Ram",mobile,isActive}) => {
             <FirstFuncomp></FirstFuncomp>
             <h3>heading3</h3>
         </PropsDemo1>
-    </div>
+    </React.Fragment>
   )
 }
 
