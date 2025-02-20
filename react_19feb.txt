@@ -21,7 +21,7 @@ variable -
 
 state -  react variable 
 class -  state 
-functional comp =  hooks (readymade functions)
+functional comp = react v16 hooks (readymade functions)
 1. useState 
 2. useEffect 
 3. useRef 

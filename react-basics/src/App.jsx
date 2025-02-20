@@ -3,7 +3,9 @@
 import Firstclasscomp from "./components/classcomp/firstclasscomp"
 import EventDemoinfun from "./components/functionalcomp/EventDemoinfun"
 import FirstFuncomp from "./components/functionalcomp/FirstFuncomp"
+import Form1 from "./components/functionalcomp/Form1"
 import Propsdemoinfun from "./components/functionalcomp/Propsdemoinfun"
+import StateDemo1 from "./components/functionalcomp/StateDemo1"
 import Statedemoinfun from "./components/functionalcomp/Statedemoinfun"
 
 function App() {
@@ -20,8 +22,11 @@ function App() {
 
      {/* <EventDemoinfun/> */}
 
-     <Statedemoinfun/>
-  </div>
+     {/* <Statedemoinfun/> */}
+{/* <StateDemo1/>   */}
+
+<Form1/>
+</div>
   )
 }
 

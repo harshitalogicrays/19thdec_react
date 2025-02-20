@@ -5,7 +5,7 @@ const Statedemoinfun = () => {
     let [count , setCount ] = React.useState(0)
     let [str,setStr] =useState("pranab")
     let [products] = useState([])
-    let [users,setUser] = useState({username:"",emaik:""})
+    let [users,setUser] = useState({username:"",email:""})
     const handleIncrease =()=>{
             //  setCount(count+1) //count = count+1 
             setCount((prevCount)=>prevCount+1) //count = count+1 
