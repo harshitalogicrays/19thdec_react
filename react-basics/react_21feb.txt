@@ -1,0 +1,29 @@
+let arr  = ()=>"hello"
+
+let arr  = ()=>{return "hello"}
+
+1. inline css - 
+ <h1 style={{color:"brown" , backgroundColor : "lightblue"}}>Products Page</h1> 
+
+2. css variable  -
+let mystyles  = {
+    color:"pink" ,  TextDecoration:"underline" , border:"2px solid blue" , borderRadius:"10px"
+}
+
+ <h1 style={mystyles}>List Rendering</h1>
+
+ 3. css file  -  .css 
+import 'path'
+
+ 4. module.css file  -  file.module.css
+ import cssm from 'path'
+
+ <h1 className = {cssm.classname}></h1>
+
+ 5. bootstrap 
+ 6. tailwindcss 
+ 7. react-bootstrap -> CSS Components 
+ 8.styled-components 
+
+ form Validations 
+ react hook form 
