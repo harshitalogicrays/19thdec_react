@@ -1,0 +1,18 @@
+react-bootstrap = 
+
+classes =  form-control 
+           card 
+           navbar 
+<Navbar></Navbar>
+<Container></Container>
+<Row></Row>
+<Col></Col>
+
+<input class="form-control">
+
+<Form.Control></Form.Control>
+
+formik 
+react hook form - validations 
+styled-components
+routing 

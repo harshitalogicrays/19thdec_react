@@ -10,12 +10,14 @@ import Propsdemoinfun from "./components/functionalcomp/Propsdemoinfun"
 import StateDemo1 from "./components/functionalcomp/StateDemo1"
 import Statedemoinfun from "./components/functionalcomp/Statedemoinfun"
 import cssmodule from './app.module.css'
+import FormValidations from './components/functionalcomp/FormValidations'
+import Reactbsform from './components/functionalcomp/Reactbsform'
 function App() {
 
   return (
   <div className="container mt-5">
-    <h1 className="app">Hello React</h1>
-    <h1 className={cssmodule.error}>Hello React</h1>
+    {/* <h1 className="app">Hello React</h1>
+    <h1 className={cssmodule.error}>Hello React</h1> */}
     {/* <FirstFuncomp></FirstFuncomp><hr/>
     <FirstFuncomp/><hr/>
     <Firstclasscomp/><br/> */}
@@ -30,8 +32,11 @@ function App() {
 
 {/* <Form1/> */}
 
-<ListRendering/>
-<Products/>
+{/* <ListRendering/>
+<Products/> */}
+
+{/* <FormValidations/> */}
+<Reactbsform title="React Bootstrap Demo"/>
 </div>
   )
 }
