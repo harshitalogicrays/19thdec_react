@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -14,6 +14,14 @@ const Header = () => {
         backgroundColor:isActive ?"yellow":""
     })
   
+    let funlinks = [
+      {text:"First Fun Comp" , url:"/fun/first"},
+      {text:"Props in Fun" , url:"/fun/props"},
+      {text:"event in fun" , url:"/fun/event"},
+      {text:"state" , url:"/fun/state"},
+      {text:"Form Design" , url:"/fun/form"},
+      {text:"Form Validations" , url:"/fun/form/validations"}
+  ]
   return (
    <>
      <Navbar expand="lg" bg="dark" data-bs-theme="dark">
@@ -25,8 +33,14 @@ const Header = () => {
             <Nav.Link as={NavLink} to="/" style={navlinkcss}>Home</Nav.Link>
             <Nav.Link as={NavLink} to="/about" style={navlinkcss}>About</Nav.Link>
             <NavDropdown title="Functional Components" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
+              {funlinks.map((link,index)=><Fragment key={index}>
+                <NavDropdown.Item as={NavLink} 
+                                  to={link.url} end
+                                style={navlinkcss}>
+                                  {link.text}</NavDropdown.Item>
+               {funlinks.length-1 != index && <NavDropdown.Divider /> }
+              </Fragment>)}
+            
             </NavDropdown>
             <Nav.Link href="#link">Class Components</Nav.Link>
           </Nav>

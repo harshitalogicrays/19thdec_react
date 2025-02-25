@@ -36,7 +36,7 @@ const checkemail = ()=>{
     }
   return (
     <div className='container p-3 shadow'>
-    <h1>Form Demo</h1><hr/>
+    <h1>Form Validations</h1><hr/>
     <div className="row">
         <div className="col-4">
             <img src={Image1} className='img-fluid'/>

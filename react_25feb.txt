@@ -3,3 +3,8 @@ styled-components
 routing 
 
 npm i react-router => v7 
+
+
+let funlinks = [
+    {text:"First Fun Cpmp" , url:"/fun/first"}
+]
