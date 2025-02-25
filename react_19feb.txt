@@ -37,3 +37,6 @@ condition -  ?: , && , ||
 state 
 css 
 array 
+
+vite - /src/assets/
+CRA -  ../../

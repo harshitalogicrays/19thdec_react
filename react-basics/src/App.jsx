@@ -12,10 +12,15 @@ import Statedemoinfun from "./components/functionalcomp/Statedemoinfun"
 import cssmodule from './app.module.css'
 import FormValidations from './components/functionalcomp/FormValidations'
 import Reactbsform from './components/functionalcomp/Reactbsform'
+import Header from './components/functionalcomp/Header'
+import { Outlet } from 'react-router'
 function App() {
 
   return (
-  <div className="container mt-5">
+    <>
+      <Outlet/>
+
+
     {/* <h1 className="app">Hello React</h1>
     <h1 className={cssmodule.error}>Hello React</h1> */}
     {/* <FirstFuncomp></FirstFuncomp><hr/>
@@ -36,8 +41,11 @@ function App() {
 <Products/> */}
 
 {/* <FormValidations/> */}
-<Reactbsform title="React Bootstrap Demo"/>
-</div>
+{/* <Reactbsform title="React Bootstrap Demo"/> */}
+
+<div className="container mt-5"></div>
+    </>
+
   )
 }
 

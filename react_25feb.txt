@@ -1,0 +1,5 @@
+react hook form - validations 
+styled-components
+routing 
+
+npm i react-router => v7 
