@@ -20,7 +20,9 @@ const Header = () => {
       {text:"event in fun" , url:"/fun/event"},
       {text:"state" , url:"/fun/state"},
       {text:"Form Design" , url:"/fun/form"},
-      {text:"Form Validations" , url:"/fun/form/validations"}
+      {text:"Form Validations" , url:"/fun/form/validations"},
+      {text:"React Hook Form" , url:"/fun/form/rhf"}
+
   ]
   return (
    <>
@@ -43,6 +45,8 @@ const Header = () => {
             
             </NavDropdown>
             <Nav.Link href="#link">Class Components</Nav.Link>
+            <Nav.Link as={NavLink} to="/custom" style={navlinkcss}>Custom Comp</Nav.Link>
+
           </Nav>
           <Form inline>
             <InputGroup>

@@ -13,6 +13,8 @@ import EventDemoinfun from './components/functionalcomp/EventDemoinfun'
 import Statedemoinfun from './components/functionalcomp/Statedemoinfun'
 import Form1 from './components/functionalcomp/Form1'
 import FormValidations from './components/functionalcomp/FormValidations'
+import RHFDemo from './components/functionalcomp/RHFDemo'
+import CustomCompDemo from './components/functionalcomp/CustomCompDemo'
 
 const Routing = () => {
   return (
@@ -28,6 +30,9 @@ const Routing = () => {
             <Route path='/fun/state' element={<Statedemoinfun/>}/>
             <Route path='/fun/form' element={<Form1/>}/>
             <Route path='/fun/form/validations' element={<FormValidations/>}/>
+            <Route path='/fun/form/rhf' element={<RHFDemo title="React Hook Form Demo"/>}/>
+
+            <Route path='custom' element={<CustomCompDemo/>} /> 
 
           </Route>
           <Route path='/login' element={<Login/>}/>

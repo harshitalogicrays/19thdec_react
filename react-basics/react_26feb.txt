@@ -1,0 +1,53 @@
+react hook form - validations 
+styled-components
+
+
+<Routes>
+    <Route path='/' element={<App/>}>
+        <Route element={<Header/>}>
+            <Route index element={<Home/>}></Route>
+            <Route path='about' element={<About/>}></Route>
+            <Route path='products' element={<Product/>}></Route>
+            <Route path='contact' element={<Contact/>}></Route>
+            <Route path='fun/hooks' element={<HooksDemo/>}>
+                <Route path='usestate' element={<StateDemo/>}></Route>
+                <Route path='useeffect' element={<UseEffectDemo/>}></Route>
+            </Route>
+        </Route>
+        <Route path='login' element={<Login/>}></Route>
+        <Route path='register' element={<Register/>}></Route>
+
+
+    </Route>
+</Routes>
+
+/ -> navbar 
+App components -  <Outlet/> header,login and register
+                   Header ------> outlet  home,about,products,contact ,
+                                  fun/hooks - <Outlet/> => /fun/hooks/usestate
+
+useEffect hook - 
+componet load 
+state change 
+component unload 
+
+React.useEffect(()=>{},[]) => component load 
+
+React.useEffect(()=>{},[category]) => component load and every time when category value changes 
+
+React.useEffect(()=>{
+    return ()=>{}
+},[]) => component unload 
+
+
+npm i styled-components
+
+================================================================
+
+useEffect hook 
+useCallback hook 
+useRef hook 
+
+useMemo 
+useImperativeHandle 
+useTransition 
