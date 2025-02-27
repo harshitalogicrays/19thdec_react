@@ -2,3 +2,8 @@
   text-align: center;
   color:green
 }
+
+input::selection{
+  background-color: red;
+  color:yellow  
+}

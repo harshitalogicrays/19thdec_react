@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
-import { MyButton, TextBox } from '../../styleccomp'
+import { MyButton, MyButton1, TextBox } from '../../styleccomp'
 
 const About = () => {
   return (
@@ -9,7 +9,7 @@ const About = () => {
       <Button>Button</Button>
       <MyButton onClick={()=>alert("Button clicked")}>Click Me </MyButton>
       <TextBox type="date"/>
-
+      <MyButton1>click me</MyButton1>
       
     </div>
   )

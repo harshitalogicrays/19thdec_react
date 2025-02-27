@@ -21,7 +21,8 @@ const Header = () => {
       {text:"state" , url:"/fun/state"},
       {text:"Form Design" , url:"/fun/form"},
       {text:"Form Validations" , url:"/fun/form/validations"},
-      {text:"React Hook Form" , url:"/fun/form/rhf"}
+      {text:"React Hook Form" , url:"/fun/form/rhf"},
+      {text:"Hooks Demo" , url:"/fun/hooks"}
 
   ]
   return (

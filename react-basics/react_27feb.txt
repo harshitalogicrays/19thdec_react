@@ -1,0 +1,30 @@
+useEffect hook 
+useCallback hook  - v19 deprecated
+useRef hook 
+
+useMemo - v19 deprecated
+useImperativeHandle 
+useTransition 
+
+
+
+useCallback is a React Hook that lets you cache a function definition between re-renders. 
+ To increase the performance of app. 
+
+ ref -  reference 
+ const selectRef = React.useRef()
+
+ input ref={selectRef}
+
+ document.getElmentById("select")
+
+ selectRef.current
+
+ ==========================================================
+ forms - 
+ 1. controlled comp  - react manages it (state and onChange )
+ 2. uncontrolled comp - DOM handles it (ref )
+
+ state vs ref 
+ state - variable 
+ ref -  return current property 

@@ -13,3 +13,8 @@ export const TextBox = styled.input({
     borderRadius:"10px",
     
 })
+
+export const MyButton1 =  styled(MyButton)({  margin:"20px" ,
+    backgroundColor:'red',
+    fontSize:'30px'
+})

@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Image1 from '/src/assets/a.jpg'
 const FormValidations = () => {
+    const focusRef =  useRef()
 let [user,setUser] = useState({username:"",email:"",password:'',cpassword:''})
 let [errors,setErrors] = useState({})
 const checkusername = ()=>{
@@ -34,6 +35,7 @@ const checkemail = ()=>{
         }
         alert(JSON.stringify(user))
     }
+    useEffect(()=>{ focusRef.current.focus()},[])
   return (
     <div className='container p-3 shadow'>
     <h1>Form Validations</h1><hr/>
@@ -45,7 +47,7 @@ const checkemail = ()=>{
         <form onSubmit={handleSubmit}>
             <div className="mb-3">
                 <label htmlFor="" className="form-label">Username</label>
-                <input type="text" className="form-control" name="username"
+                <input type="text" className="form-control" name="username" ref={focusRef}
                 value={user.username} onChange={(e)=>setUser({...user,username:e.target.value})}
                 onBlur={checkusername}/>
                 {errors?.unamerr && <span className="text-danger">{errors.unamerr}</span>}
