@@ -33,12 +33,15 @@ const UseCallbackdemo = () => {
   },[length,numAllowed,charAllowed])
 
   const handleCopy = ()=>{
-    window.navigator.clipboard.writeText(randomVal)
+   
     // document.getElementById("select").select()
+   let ss =  selectRef.current.selectionStart
+   let se =  selectRef.current.selectionEnd
    selectRef.current.select()
-   selectRef.current.setSelectionRange(0,6)
+   selectRef.current.setSelectionRange(ss,se)
    selectRef.current.style.fontSize ="30px"
-   alert( selectRef.current.value)
+   window.navigator.clipboard.writeText(randomVal.substring(ss,se))
+   alert(randomVal.substring(ss,se))
   }
   return (
     <div className='container mt-5 col-8'> <h1>UseCallback Demo</h1><hr/>

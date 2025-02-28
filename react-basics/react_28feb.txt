@@ -1,0 +1,24 @@
+useEffect -  
+useCallback - function definition cache 
+
+useMemo -  expensive calculation result cache 
+
+useRef -  
+const myRef  = React.useRef()
+const myRef1  = useRef()
+
+select()
+focus()
+style
+value 
+
+////////////////////////////////////////
+
+lifting the state up -
+
+ref - > parent to child 
+        forwardRef 
+useImperativeHandle 
+
+custom hook 
+context basics 
