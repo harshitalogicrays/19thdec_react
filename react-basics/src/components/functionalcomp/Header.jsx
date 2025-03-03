@@ -22,6 +22,7 @@ const Header = () => {
       {text:"Form Design" , url:"/fun/form"},
       {text:"Form Validations" , url:"/fun/form/validations"},
       {text:"React Hook Form" , url:"/fun/form/rhf"},
+      {text:"Lifting the state up" , url:"/fun/ltsu"},
       {text:"Hooks Demo" , url:"/fun/hooks"}
 
   ]

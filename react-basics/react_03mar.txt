@@ -1,0 +1,16 @@
+lifting the state up -
+parent to child - via props 
+
+
+ref - > parent to child 
+        forwardRef 
+useImperativeHandle 
+
+custom hook  - 
+const useToggle = ()=>{
+        return "hello"
+}
+
+
+context basics 
+

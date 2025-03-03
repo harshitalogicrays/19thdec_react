@@ -25,6 +25,7 @@ import UseTransitionDemo from './components/functionalcomp/UseTransitionDemo'
 import USEImperativeHandle from './components/functionalcomp/USEImperativeHandle'
 import UseContextDemo from './components/functionalcomp/UseContextDemo'
 import CustomHookDemo from './components/functionalcomp/CustomHookDemo'
+import Liftingthestateupparent from './components/functionalcomp/Liftingthestateupparent'
 
 const Routing = () => {
   return (
@@ -39,6 +40,7 @@ const Routing = () => {
             <Route path='/fun/event' element={<EventDemoinfun/>}/>
             <Route path='/fun/state' element={<Statedemoinfun/>}/>
             <Route path='/fun/form' element={<Form1/>}/>
+            <Route path='/fun/ltsu' element={<Liftingthestateupparent/>}/>
             <Route path='/fun/form/validations' element={<FormValidations/>}/>
             <Route path='/fun/form/rhf' element={<RHFDemo title="React Hook Form Demo"/>}/>
             <Route path='/fun/hooks' element={<HooksDemo/>}>

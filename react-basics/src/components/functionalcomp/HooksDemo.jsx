@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Nav, Row } from 'react-bootstrap'
+import { Col, Container, Nav, Row } from 'react-bootstrap'
 import { NavLink, Outlet } from 'react-router'
 
 const HooksDemo = () => {
@@ -25,7 +25,7 @@ const HooksDemo = () => {
         {links.map((link,index)=><Nav.Link key={index} as={NavLink} to={link.url} style={navlinkcss}end>{link.text}</Nav.Link>)}
     </Nav>
     </Col>
-    <Col><Outlet/></Col>
+    <Col><Container className='mt-5'><Outlet/></Container></Col>
    </Row>
   )
 }
