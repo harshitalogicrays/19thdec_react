@@ -26,12 +26,13 @@ import USEImperativeHandle from './components/functionalcomp/USEImperativeHandle
 import UseContextDemo from './components/functionalcomp/UseContextDemo'
 import CustomHookDemo from './components/functionalcomp/CustomHookDemo'
 import Liftingthestateupparent from './components/functionalcomp/Liftingthestateupparent'
+import MyContext from './components/functionalcomp/MyContext'
 
 const Routing = () => {
   return (
     <Routes>
         <Route path='/' element={<App/>}>
-          <Route element={<Header/>}>
+          <Route element={<MyContext><Header/></MyContext>}>
             <Route index element={<Home/>}/>
             <Route path='about' element={<About/>} /> 
             <Route path='/register' element={<Register/>}/>
