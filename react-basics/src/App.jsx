@@ -14,12 +14,15 @@ import FormValidations from './components/functionalcomp/FormValidations'
 import Reactbsform from './components/functionalcomp/Reactbsform'
 import Header from './components/functionalcomp/Header'
 import { Outlet } from 'react-router'
+import ThemeContext from './components/functionalcomp/ThemeContext'
+import CartContext from './components/functionalcomp/CartContext'
 function App() {
 
   return (
-    <>
-      <Outlet/>
-
+    <ThemeContext>
+      <CartContext>
+        <Outlet/>
+      </CartContext>
 
     {/* <h1 className="app">Hello React</h1>
     <h1 className={cssmodule.error}>Hello React</h1> */}
@@ -43,8 +46,7 @@ function App() {
 {/* <FormValidations/> */}
 {/* <Reactbsform title="React Bootstrap Demo"/> */}
 
-<div className="container mt-5"></div>
-    </>
+    </ThemeContext>
 
   )
 }

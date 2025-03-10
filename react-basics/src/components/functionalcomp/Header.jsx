@@ -7,8 +7,11 @@ import logo from '/src/assets/logo.webp'
 import { Button, Col, Form, Image, InputGroup, Row } from 'react-bootstrap';
 import { BsCart, BsSearch } from 'react-icons/bs';
 import { NavLink, Outlet } from 'react-router';
+import ThemeBtn from './ThemeBtn';
+import { useCart } from './CartContext';
 
 const Header = () => {
+  const {cartItems} = useCart()
   const navlinkcss = ({isActive})=>({
         color:isActive?"red":"",
         backgroundColor:isActive ?"yellow":""
@@ -36,6 +39,8 @@ const Header = () => {
           <Nav className="me-auto">
             <Nav.Link as={NavLink} to="/" style={navlinkcss}>Home</Nav.Link>
             <Nav.Link as={NavLink} to="/about" style={navlinkcss}>About</Nav.Link>
+            <Nav.Link as={NavLink} to="/shop" style={navlinkcss}>Shop</Nav.Link>
+
             <NavDropdown title="Functional Components" id="basic-nav-dropdown">
               {funlinks.map((link,index)=><Fragment key={index}>
                 <NavDropdown.Item as={NavLink} 
@@ -50,6 +55,7 @@ const Header = () => {
             <Nav.Link as={NavLink} to="/custom" style={navlinkcss}>Custom Comp</Nav.Link>
 
           </Nav>
+          <ThemeBtn/>
           <Form inline>
             <InputGroup>
             <Form.Control  type="text"  placeholder="Search"  name="search" />
@@ -60,7 +66,7 @@ const Header = () => {
           <Nav.Link href="#link" style={{position:'relative'}}>
             <BsCart style={{fontSize:'30px'}}/>
             <span class="badge rounded-pill text-bg-danger" 
-            style={{position:'absolute',right:"-1px" ,top:"-1px"}}>0</span >     
+            style={{position:'absolute',right:"-1px" ,top:"-1px"}}>{cartItems.length}</span >     
           </Nav.Link>
             <Nav.Link as={NavLink} to="/register" style={navlinkcss}>Register</Nav.Link>
             <Nav.Link as={NavLink} to="/login" style={navlinkcss}>Login</Nav.Link>

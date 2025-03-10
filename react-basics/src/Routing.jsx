@@ -27,6 +27,7 @@ import UseContextDemo from './components/functionalcomp/UseContextDemo'
 import CustomHookDemo from './components/functionalcomp/CustomHookDemo'
 import Liftingthestateupparent from './components/functionalcomp/Liftingthestateupparent'
 import MyContext from './components/functionalcomp/MyContext'
+import Products from './components/functionalcomp/Products'
 
 const Routing = () => {
   return (
@@ -35,6 +36,7 @@ const Routing = () => {
           <Route element={<MyContext><Header/></MyContext>}>
             <Route index element={<Home/>}/>
             <Route path='about' element={<About/>} /> 
+            <Route path='shop' element={<Products/>} /> 
             <Route path='/register' element={<Register/>}/>
             <Route path='/fun/first' element={<FirstFuncomp/>}/>
             <Route path='/fun/props' element={<Propsdemoinfun/>}/>
