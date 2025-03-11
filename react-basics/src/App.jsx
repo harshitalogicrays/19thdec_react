@@ -16,9 +16,24 @@ import Header from './components/functionalcomp/Header'
 import { Outlet } from 'react-router'
 import ThemeContext from './components/functionalcomp/ThemeContext'
 import CartContext from './components/functionalcomp/CartContext'
+import { ToastContainer } from 'react-toastify'
 function App() {
 
   return (
+    <>
+
+    <ToastContainer position="top-left"
+                    autoClose={2000}
+                    hideProgressBar
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss={false}
+                    draggable={false}
+                    pauseOnHover={false}
+                    theme="colored"/>
+
+
     <ThemeContext>
       <CartContext>
         <Outlet/>
@@ -48,6 +63,7 @@ function App() {
 
     </ThemeContext>
 
+</>
   )
 }
 

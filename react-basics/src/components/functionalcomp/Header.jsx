@@ -63,7 +63,7 @@ const Header = () => {
             </InputGroup>
           </Form>
           <Nav>
-          <Nav.Link href="#link" style={{position:'relative'}}>
+          <Nav.Link as={NavLink} to="/cart" style={{position:'relative'}}>
             <BsCart style={{fontSize:'30px'}}/>
             <span class="badge rounded-pill text-bg-danger" 
             style={{position:'absolute',right:"-1px" ,top:"-1px"}}>{cartItems.length}</span >     

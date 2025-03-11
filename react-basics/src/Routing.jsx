@@ -28,6 +28,8 @@ import CustomHookDemo from './components/functionalcomp/CustomHookDemo'
 import Liftingthestateupparent from './components/functionalcomp/Liftingthestateupparent'
 import MyContext from './components/functionalcomp/MyContext'
 import Products from './components/functionalcomp/Products'
+import Cart from './components/functionalcomp/Cart'
+import ClassHeader from './components/classcomp/ClassHeader'
 
 const Routing = () => {
   return (
@@ -60,11 +62,13 @@ const Routing = () => {
             </Route>
 
             <Route path='custom' element={<CustomCompDemo/>} /> 
-
+            <Route path='cart' element={<Cart/>} /> 
           </Route>
-          <Route path='/login' element={<Login/>}/>
+          <Route path='login' element={<Login/>}/>
         </Route>
-      
+        <Route path='/class' element={<ClassHeader/>}>
+
+        </Route>
       <Route path="*" element={<Pagenotfound/>}/>
     </Routes>
   )
