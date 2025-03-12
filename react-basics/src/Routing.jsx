@@ -30,6 +30,14 @@ import MyContext from './components/functionalcomp/MyContext'
 import Products from './components/functionalcomp/Products'
 import Cart from './components/functionalcomp/Cart'
 import ClassHeader from './components/classcomp/ClassHeader'
+import Firstclasscomp from './components/classcomp/firstclasscomp'
+import Propsinclass from './components/classcomp/Propsinclass'
+import EventandState from './components/classcomp/EventandState'
+import Forminclass from './components/classcomp/Forminclass'
+import Refinclass from './components/classcomp/Refinclass'
+import Purecompdemo from './components/classcomp/Purecompdemo'
+import LifeCycleMethods from './components/classcomp/LifeCycleMethods'
+import HOCdemo from './components/classcomp/HOCdemo'
 
 const Routing = () => {
   return (
@@ -64,11 +72,20 @@ const Routing = () => {
             <Route path='custom' element={<CustomCompDemo/>} /> 
             <Route path='cart' element={<Cart/>} /> 
           </Route>
-          <Route path='login' element={<Login/>}/>
+          <Route path='login' element={<Login/>}/>          
         </Route>
-        <Route path='/class' element={<ClassHeader/>}>
 
+        <Route path='/class' element={<ClassHeader/>}>
+            <Route index element={<Firstclasscomp/>}/>
+            <Route path='props' element={<Propsinclass/>}/>
+            <Route path='es' element={<EventandState/>}/>
+            <Route path='form' element={<Forminclass/>}/>
+            <Route path='ref' element={<Refinclass/>}/>
+            <Route path='pure' element={<Purecompdemo/>}/>
+            <Route path='lifecycle' element={<LifeCycleMethods/>}/>
+            <Route path='hoc' element={<HOCdemo/>}/>
         </Route>
+        
       <Route path="*" element={<Pagenotfound/>}/>
     </Routes>
   )

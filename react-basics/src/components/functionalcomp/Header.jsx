@@ -51,7 +51,7 @@ const Header = () => {
               </Fragment>)}
             
             </NavDropdown>
-            <Nav.Link href="#link">Class Components</Nav.Link>
+            <Nav.Link as={NavLink} to='/class'>Class Components</Nav.Link>
             <Nav.Link as={NavLink} to="/custom" style={navlinkcss}>Custom Comp</Nav.Link>
 
           </Nav>

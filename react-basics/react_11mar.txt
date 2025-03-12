@@ -1,9 +1,0 @@
-class comp = 
-props 
-event 
-state  and setState
-validation 
-ref 
-life cycle 
-pure 
-HOC 

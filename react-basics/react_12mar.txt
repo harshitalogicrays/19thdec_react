@@ -1,0 +1,31 @@
+class comp = 
+props 
+event 
+state  and setState
+validation 
+ref 
+life cycle 
+pure 
+HOC 
+
+ try{
+          const res = await fetch("https://jsonplaceholder.typicode.com/comments") //get method
+          const data = await res.json()
+          console.log(data)
+        }
+        catch(error){console.log(error)}
+
+
+        fetch("url" ,{
+            method :"POST/PUT" ,
+            headers : {'content-type' :  'application/json'} ,
+            body : JSON.stringify (jsobjdata)
+        })
+
+         fetch("url" ,{ method :"DELETE/GET"})
+
+    axios  => npm i axios 
+    axios.get("url")
+    axios.post("url",  obj)
+    axios.put("url",  obj)
+    axios.delete("url")
