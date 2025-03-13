@@ -29,3 +29,25 @@ HOC
     axios.post("url",  obj)
     axios.put("url",  obj)
     axios.delete("url")
+
+///////////////////////////////////////
+life cycle
+error boundary  - try and catch  
+pure 
+HOC 
+
+
+Class Comp Life Cycle  -
+
+1. mounting phase 
+2. updating phase
+3. unmounting phase 
+4. error boundary 
+
+
+
+  Higher Order Component  - 
+
+<ErrorBoundary>
+  <PureComp/>
+</ErrorBoundary>
