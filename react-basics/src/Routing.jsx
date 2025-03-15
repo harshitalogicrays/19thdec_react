@@ -38,6 +38,7 @@ import Refinclass from './components/classcomp/Refinclass'
 import Purecompdemo from './components/classcomp/Purecompdemo'
 import LifeCycleMethods from './components/classcomp/LifeCycleMethods'
 import HOCdemo from './components/classcomp/HOCdemo'
+import ErrorBoundaryDemo from './components/classcomp/ErrorBoundaryDemo'
 
 const Routing = () => {
   return (
@@ -84,6 +85,7 @@ const Routing = () => {
             <Route path='pure' element={<Purecompdemo/>}/>
             <Route path='lifecycle' element={<LifeCycleMethods/>}/>
             <Route path='hoc' element={<HOCdemo/>}/>
+            <Route path='error' element={<ErrorBoundaryDemo/>}/>
         </Route>
         
       <Route path="*" element={<Pagenotfound/>}/>

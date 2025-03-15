@@ -15,6 +15,8 @@ export default class ClassHeader extends Component {
     {text:"pure" , url:'/class/pure'},
     {text:"life cycle" , url:'/class/lifecycle'},
     {text:"hoc" , url:'/class/hoc'},
+    {text:"error boundary" , url:'/class/error'},
+
   ]
 
   render() {

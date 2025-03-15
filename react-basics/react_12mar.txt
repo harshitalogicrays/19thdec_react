@@ -46,7 +46,7 @@ Class Comp Life Cycle  -
 
 
 
-  Higher Order Component  - 
+Higher Order Component  - 
 
 <ErrorBoundary>
   <PureComp/>

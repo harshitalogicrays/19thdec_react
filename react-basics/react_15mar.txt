@@ -1,0 +1,20 @@
+
+Higher Order Component  - 
+<tr key={index}>
+    {props.columns.map((col,index)=><td key={index}>{item[col]}</td>)}
+</tr>
+
+<tr key=0>
+   <td key=0>item[col]</td> 
+   <td key=1>email</td> 
+   <td key=2>phone</td> 
+   <td key=3>name</td> 
+   <td key=4>id</td> 
+</tr>
+<tr key=1>
+   <td key=0>username</td> 
+   <td key=1>email</td> 
+   <td key=2>phone</td> 
+   <td key=3>name</td> 
+   <td key=4>id</td> 
+</tr>
