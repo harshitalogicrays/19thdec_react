@@ -50,8 +50,8 @@ const Header = () => {
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <div className='relative me-5 sm:block hidden'>
-              <HiSearch className='h-8 w-6 absolute left-0 text-gray-500 mx-1  border-r'/>
-              <input type="search" className='bg-gray-300  rounded-lg  w-full h-8 text-center' placeholder='search here' name="search"/>
+              <input type="search" className='bg-gray-700 text-white rounded-full pl-10 py-1 pr-4 focus:outline-none focus:ring-2 focus:ring-white' placeholder='search here' name="search"/>
+              <HiSearch className='absolute left-3 top-2 w-5 h-5 text-gray-400'/>
             </div>
             <div className='hidden sm:block'>
             <NavLink to='/register'
@@ -139,8 +139,8 @@ const Header = () => {
             </div>
 
             <div className='relative me-5 block sm:hidden'>
-              <HiSearch className='h-8 w-6 absolute left-0 text-gray-500 mx-1  border-r'/>
-              <input type="search" className='bg-gray-300 rounded-lg  w-full h-8'  placeholder='search here' name="search"/>
+            <input type="search" className='bg-gray-700 text-white rounded-full pl-10 py-1 pr-4 focus:outline-none focus:ring-2 focus:ring-white' placeholder='search here' name="search"/>
+              <HiSearch className='absolute left-3 top-2 w-5 h-5 text-gray-400'/>
             </div>
         </div>
       </DisclosurePanel>

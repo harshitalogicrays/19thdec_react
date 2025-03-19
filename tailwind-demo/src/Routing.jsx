@@ -8,6 +8,8 @@ import Shop from './features/Shop'
 import Register from './features/Register'
 import Login from './features/Login'
 import PageNotFound from './features/PageNotFound'
+import Cart from './features/Cart'
+import ProductDetails from './features/ProductDetails'
 
 const Routing = () => {
   return (
@@ -18,6 +20,9 @@ const Routing = () => {
                 <Route path='about' element={<About/>}/>
                 <Route path='shop' element={<Shop/>}/>
                 <Route path='register' element={<Register/>}/>
+                <Route path='cart' element={<Cart/>}/>
+                <Route path='product/details' element={<ProductDetails/>}/>
+
             </Route>
             <Route path='login' element={<Login/>}/>
         </Route>
