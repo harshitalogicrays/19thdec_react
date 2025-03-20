@@ -2,6 +2,7 @@ import React from 'react'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
+import image1 from '/src/assets/a.avif'
 import { FaChevronCircleLeft, FaChevronCircleRight } from 'react-icons/fa';
 
 const ImageSlider = () => {
@@ -10,6 +11,7 @@ const ImageSlider = () => {
     {url:"https://www.w3.org/TR/2019/NOTE-wai-aria-practices-1.1-20190207/examples/carousel/carousel-1/images/lands-endslide__800x600.jpg", text:"image2"},
     {url:" https://rawgit.com/creativetimofficial/material-kit/master/assets/img/bg2.jpg", text:"image3"},
     {url:"https://dequeuniversity.com/assets/js/patterns/images/tempimage02.jpeg", text:"image4"},
+    {url:image1, text:"image4"},
   ]
 
   const CustomPrevArrow = ({onClick})=>(

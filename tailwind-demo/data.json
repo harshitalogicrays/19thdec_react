@@ -1,5 +1,33 @@
 {
-    "users":[],
-    "products":[],
-    "orders":[]
+  "users": [
+    {
+      "id": "a7bf",
+      "username": "ram",
+      "email": "ram@gmail.com",
+      "password": "ram123",
+      "cpassword": "ram123",
+      "role": "1",
+      "createdAt": "2025-03-20T04:57:01.640Z"
+    },
+    {
+      "id": "6777",
+      "username": "Admin",
+      "email": "admin@gmail.com",
+      "password": "admin123",
+      "cpassword": "admin123",
+      "role": "0",
+      "createdAt": "2025-03-20T04:58:30.582Z"
+    },
+    {
+      "id": "0304",
+      "username": "happy",
+      "email": "happy@gmail.com",
+      "password": "happy123",
+      "cpassword": "happy123",
+      "role": "1",
+      "createdAt": "2025-03-20T05:01:54.423Z"
+    }
+  ],
+  "products": [],
+  "orders": []
 }

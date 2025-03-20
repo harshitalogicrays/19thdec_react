@@ -1,21 +1,28 @@
 import React from 'react'
-import { NavLink, Outlet } from 'react-router'
+import { NavLink, Outlet, useNavigate } from 'react-router'
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { HiBars3, HiXMark } from 'react-icons/hi2'
 import { HiBell, HiSearch } from 'react-icons/hi'
 import { FaShoppingCart } from 'react-icons/fa'
 import Avatar from '/src/assets/avatar.png'
+import { toast } from 'react-toastify'
+import { ShowonLogin, ShowonLogout } from './hiddenlinks'
 
 const Header = () => {
+  const navigate = useNavigate()
   const navigation = [
-    { name: 'Home', href: '/', current: true },
-    { name: 'About', href: '/about', current: false },
-    { name: 'Shop', href: '/shop', current: false },
+    { name: 'Home', href: '/'},
+    { name: 'About', href: '/about'},
+    { name: 'Shop', href: '/shop'},
   ]
-  
-  function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
+
+const handleLogout = ()=>{
+  if(sessionStorage.getItem("19thdec") != null){
+    sessionStorage.removeItem("19thdec")
+    toast.success("loggedout successfully")
+    navigate('/')
   }
+}
   return (
     <>
     <Disclosure as="nav" className="bg-gray-800">
@@ -54,7 +61,8 @@ const Header = () => {
               <HiSearch className='absolute left-3 top-2 w-5 h-5 text-gray-400'/>
             </div>
             <div className='hidden sm:block'>
-            <NavLink to='/register'
+              <ShowonLogout>
+                 <NavLink to='/register'
                     className = {({isActive})=>isActive ? " bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"  : " text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"}>
                     Register
                   </NavLink>
@@ -62,6 +70,7 @@ const Header = () => {
                     className = {({isActive})=>isActive ? " bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"  : " text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"}>
                     Login
                   </NavLink>
+              </ShowonLogout>
             </div>
                
             <button
@@ -72,7 +81,7 @@ const Header = () => {
               <FaShoppingCart aria-hidden="true" className="size-9" />
               <span className="bg-red-700 text-white px-2  rounded-2xl absolute -top-2 -right-4 ">0</span>
             </button>
-
+                <ShowonLogin>
             {/* Profile dropdown */}
             <Menu as="div" className="relative ml-3">
               <div>
@@ -103,15 +112,15 @@ const Header = () => {
                   </a>
                 </MenuItem>
                 <MenuItem>
-                  <a
-                    href="#"
+                  <button
+                    onClick={handleLogout}
                     className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
                   >
                     Sign out
-                  </a>
+                  </button>
                 </MenuItem>
               </MenuItems>
-            </Menu>
+            </Menu></ShowonLogin>
           </div>
         </div>
       </div>

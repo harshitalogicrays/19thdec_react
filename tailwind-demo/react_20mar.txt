@@ -1,0 +1,11 @@
+npx json-server data.json  => 3000
+
+npx json-server data.json --port 1000
+
+
+http://localhost:1000/users/a7bf => a7bf -> id -> query parameter
+
+http://localhost:1000/users?email=ram@gmail.com
+
+?email=ram@gmail.com => query string 
+

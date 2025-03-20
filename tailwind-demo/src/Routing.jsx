@@ -10,6 +10,12 @@ import Login from './features/Login'
 import PageNotFound from './features/PageNotFound'
 import Cart from './features/Cart'
 import ProductDetails from './features/ProductDetails'
+import AdminLayout from './features/Admin/AdminLayout'
+import Dashboard from './features/Admin/Dashboard'
+import AddProduct from './features/Admin/AddProduct'
+import ViewProduct from './features/Admin/ViewProduct'
+import Orders from './features/Admin/Orders'
+import { Protected, ProtectedAdmin } from './features/hiddenlinks'
 
 const Routing = () => {
   return (
@@ -17,7 +23,7 @@ const Routing = () => {
         <Route path='/' element={<App/>}>
             <Route element={<Header/>}>
                 <Route index element={<Home/>}/>
-                <Route path='about' element={<About/>}/>
+                <Route path='about' element={<Protected><About/></Protected>}/>
                 <Route path='shop' element={<Shop/>}/>
                 <Route path='register' element={<Register/>}/>
                 <Route path='cart' element={<Cart/>}/>
@@ -25,6 +31,14 @@ const Routing = () => {
 
             </Route>
             <Route path='login' element={<Login/>}/>
+
+            <Route path='admin' element={<ProtectedAdmin><AdminLayout/></ProtectedAdmin>}>
+                <Route index element={<Dashboard/>}/>
+                <Route path='add' element={<AddProduct/>}/>
+                <Route path='view' element={<ViewProduct/>}/>
+                <Route path='orders' element={<Orders/>}/>
+
+            </Route>
         </Route>
         <Route path='*' element={<PageNotFound/>}/>
 
