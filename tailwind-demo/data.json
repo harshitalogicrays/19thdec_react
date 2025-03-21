@@ -26,6 +26,27 @@
       "cpassword": "happy123",
       "role": "1",
       "createdAt": "2025-03-20T05:01:54.423Z"
+    },
+    {
+      "id": "bac2",
+      "username": "Admin",
+      "email": "admin@gmail.com",
+      "password": "aaaaaa",
+      "confirmPassword": "aaaaaa"
+    },
+    {
+      "id": "fc2f",
+      "username": "Admin",
+      "email": "admin@gmail.com",
+      "password": "aaaaaa",
+      "confirmPassword": "aaaaaa"
+    },
+    {
+      "id": "71d7",
+      "username": "aaa",
+      "email": "aaa@gmail.com",
+      "password": "1111111",
+      "confirmPassword": "1111111"
     }
   ],
   "products": [],

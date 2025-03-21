@@ -1,0 +1,43 @@
+axios.post("url" , data , {withCreditenials:"include"})
+third party cookies 
+
+redux - javascript state mgmt tool to store application/ top level state 
+
+flux 
+redux 
+@reduxjs/toolkit 
+
+store - 
+action - events
+reducers - pure functions 
+state - data
+view -  reactjs / vue/ vanilla js 
+
+single source of truth  - only one store in one app 
+
+
+view -----------> action---------> reducers--------> store (state)
+
+store ----------------> view 
+
+
+soda shop / ice cream / cake shop 
+
+customer 
+shopkeeper 
+soda / lemonade / lassi / falvour soda / milk shake 
+shelf / cabinet
+
+customer -------->BUY_SODA--------> shopkeeper-------------> cabinet
+ view           action               reducers (functions)     store 
+
+store ------------> customer
+
+
+customer -------->BUY_MilkShake--------> shopkeeper-------------> cabinet
+
+react-redux -  
+action dispatch => useDispatch()
+select => useSelector()
+
+store -> slices 
