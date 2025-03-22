@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ProductsCard from './ProductsCard'
 import { getData } from '../Apis'
 import Loader from './Loader'
+import ProductItem from './ProductItem'
 
 const Shop = () => {
 const [products,setProducts] = useState([])
@@ -23,11 +24,10 @@ useEffect(()=>{
             <button class=" border-blue-700 border-4 border-t-transparent animate-spin rounded-full h-10 w-10"></button><br/>
                 <h1>No product found</h1></>} */}
 
-{products.length==0 && <Loader/>}
+        {products.length==0 && <Loader/>}
 
-        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">   
-            <ProductsCard products={products}/>
-        </div>
+            <ProductItem products={products}/>
+
       </div>
     </div>
     </>

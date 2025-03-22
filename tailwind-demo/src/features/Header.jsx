@@ -7,6 +7,8 @@ import { FaShoppingCart } from 'react-icons/fa'
 import Avatar from '/src/assets/avatar.png'
 import { toast } from 'react-toastify'
 import { ShowonLogin, ShowonLogout } from './hiddenlinks'
+import { useSelector } from 'react-redux'
+import { selectCart } from '../redux/cartSlice'
 
 const Header = () => {
   const navigate = useNavigate()
@@ -23,6 +25,7 @@ const handleLogout = ()=>{
     navigate('/')
   }
 }
+const cartItems =  useSelector(selectCart)
   return (
     <>
     <Disclosure as="nav" className="bg-gray-800">
@@ -79,7 +82,7 @@ const handleLogout = ()=>{
             >
               <span className="absolute -inset-1.5" />
               <FaShoppingCart aria-hidden="true" className="size-9" />
-              <span className="bg-red-700 text-white px-2  rounded-2xl absolute -top-2 -right-4 ">0</span>
+              <span className="bg-red-700 text-white px-2  rounded-2xl absolute -top-2 -right-4 ">{cartItems.length}</span>
             </button>
                 <ShowonLogin>
             {/* Profile dropdown */}

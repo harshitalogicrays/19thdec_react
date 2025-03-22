@@ -1,12 +1,16 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router'
+import { addtocart } from '../redux/cartSlice'
 
-const ProductsCard = ({ products }) => {
+const ProductsCard = ({ product }) => {
+  const dispatch = useDispatch()
+  const handleCart = ()=>{
+    dispatch(addtocart(product))
+  }
   return (
     <>
-      {products.map((product) => (
-         
-        <div key={product.id} className={`group relative p-4 rounded-md shadow-md bg-white transition-all duration-300 
+       <div key={product.id} className={`group relative p-4 rounded-md shadow-md bg-white transition-all duration-300 
           ${product.stock === 0 ? "opacity-50  pointer-events-none" : "hover:shadow-lg"}`} >
          <Link to="/product/details" state={product} >
           <img
@@ -35,7 +39,7 @@ const ProductsCard = ({ products }) => {
           </Link>
 
           {product.stock > 0 && (
-            <button onClick={()=>alert("button clicked")}
+            <button onClick={handleCart}
               className="relative mt-3 w-full bg-indigo-500 text-white py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition duration-200"
             >
               Add to Cart
@@ -43,10 +47,9 @@ const ProductsCard = ({ products }) => {
           )}
 		
         </div> 
-      ))}
       
     </>
   )
-}
+} 
 
 export default ProductsCard
