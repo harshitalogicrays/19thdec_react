@@ -15,6 +15,7 @@ const ProductItem = ({products}) => {
     },[itemOffset,products])
 
     const handlePageClick =(event)=>{ //page 2 => index 1, page 4 index=3
+        console.log(event)
         const newOffset = (event.selected * itemsPerPage) % products.length; //1*4 % 30 => 4 ,12%30
         setItemOffset(newOffset) // 4  , 12
     }
@@ -29,11 +30,12 @@ const ProductItem = ({products}) => {
     <ReactPaginate  breakLabel="..."  nextLabel="next >" onPageChange={handlePageClick}
             pageRangeDisplayed={5} pageCount={pageCount}  previousLabel="< previous"  renderOnZeroPageCount={null}
             containerClassName="flex items-center mt-5 justify-center"
-            pageClassName="px-4 py-2 border hover:bg-gray-300 cursor-pointer "
-            activeClassName="bg-indigo-500 text-white border border-black"
-            previousClassName="px-4 py-2 border rounded-l-lg "
-            nextClassName="px-4 py-2 border rounded-r-lg "
-            disabledClassName="bg-gray-400 text-white cursor-not-allowed "
+            pageClassName="px-4 py-2 ring-1 ring-gray-300 hover:bg-gray-300 cursor-pointer "
+            pageLinkClassName="block w-full h-full text-center"  // Makes the whole box clickable
+            activeClassName="bg-indigo-500 text-white"
+            previousClassName="px-4 py-2 ring-1 ring-gray-300 rounded-l-lg"
+            nextClassName="px-4 py-2 ring-1 ring-gray-300 rounded-r-lg"
+            disabledClassName="bg-gray-400 text-white cursor-not-allowed"
             breakClassName="px-4 py-2"
         />
    </>

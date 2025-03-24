@@ -1,12 +1,15 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
-import { Link, useNavigate } from 'react-router'
+import { Link, useLocation, useNavigate } from 'react-router'
 import { toast } from 'react-toastify'
 
 const Login = () => {
   const redirect = useNavigate()
   const {register,handleSubmit,formState:{errors},trigger,setFocus} =useForm()
+  const location =  useLocation()
+  let redirectURL = location?.state ? location.state.path : '/'
+
   const loginUser = async(data)=>{
     try{
        const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/users?email=${data.email}`)
@@ -17,7 +20,7 @@ const Login = () => {
         sessionStorage.setItem("19thdec",JSON.stringify(obj))
           toast.success("loggedIn successfully")
           if(res.data[0].role=="0") redirect('/admin')
-          else redirect('/')
+          else redirect(redirectURL)
       }
       else {toast.error("invalid credentials")}
     }

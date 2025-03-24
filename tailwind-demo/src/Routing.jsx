@@ -16,6 +16,8 @@ import AddProduct from './features/Admin/AddProduct'
 import ViewProduct from './features/Admin/ViewProduct'
 import Orders from './features/Admin/Orders'
 import { Protected, ProtectedAdmin } from './features/hiddenlinks'
+import Checkout from './features/Checkout'
+import CheckoutPayment from './features/CheckoutPayment'
 
 const Routing = () => {
   return (
@@ -28,6 +30,8 @@ const Routing = () => {
                 <Route path='register' element={<Register/>}/>
                 <Route path='cart' element={<Cart/>}/>
                 <Route path='product/details' element={<ProductDetails/>}/>
+                <Route path='checkout' element={<Protected><Checkout/> </Protected>}/>
+                <Route path='checkoutpayment' element={<Protected><CheckoutPayment/> </Protected>}/>
 
             </Route>
             <Route path='login' element={<Login/>}/>
