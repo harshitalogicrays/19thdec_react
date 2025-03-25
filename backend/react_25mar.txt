@@ -1,0 +1,4 @@
+package.json -> npm init --y
+
+expressjs is a nodejs web framework
+npm i express

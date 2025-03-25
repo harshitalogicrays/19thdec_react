@@ -31,7 +31,7 @@ const ProductItem = ({products}) => {
             pageRangeDisplayed={5} pageCount={pageCount}  previousLabel="< previous"  renderOnZeroPageCount={null}
             containerClassName="flex items-center mt-5 justify-center"
             pageClassName="px-4 py-2 ring-1 ring-gray-300 hover:bg-gray-300 cursor-pointer "
-            pageLinkClassName="block w-full h-full text-center"  // Makes the whole box clickable
+            pageLinkClassName="block w-full h-full text-center" 
             activeClassName="bg-indigo-500 text-white"
             previousClassName="px-4 py-2 ring-1 ring-gray-300 rounded-l-lg"
             nextClassName="px-4 py-2 ring-1 ring-gray-300 rounded-r-lg"
