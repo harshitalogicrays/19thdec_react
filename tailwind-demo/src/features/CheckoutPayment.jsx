@@ -29,7 +29,7 @@ const CheckoutPayment = () => {
       // update product stock
       dispatch(emptycart())
       toast.success("order placed successfully")
-      redirect('/thank-you')
+      redirect('/thankyou')
   }
   catch(err){toast.error(err.message)}
   }
@@ -91,7 +91,7 @@ const handleStripe = async()=>{
             {(paymentMethod=='online' && clientSecret ) &&
               <div className="mt-4 p-4 border rounded-lg bg-gray-100">
                 <h3 className="text-lg font-semibold mb-2">Enter Payment Details</h3>
-                <StripePayment clientSecret = {clientSecret} stripe={stripe}/>
+                <StripePayment clientSecret = {clientSecret}/>
               </div>    
 }   
         </div>

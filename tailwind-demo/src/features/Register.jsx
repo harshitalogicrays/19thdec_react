@@ -8,12 +8,19 @@ const Register = () => {
   const [user,setUser] =useState({username:'',email:'',password:'',cpassword:'',role:'1'})
   const handleSubmit = async(e)=>{
     e.preventDefault()
+    const toastId = "error-toast";
     let {username,email,password,cpassword} = user
     if(!username ||!email || !password || !cpassword){
-        toast.error("please fill all the fields")
+        // toast.error("please fill all the fields")
+        if (!toast.isActive(toastId)) {
+          toast.error("Please fill all the fields", { toastId });
+        }
     }
     else if(!/^[\w\.]+\@[\w]+\.[a-zA-Z]{3}$/.test(email)){
-      toast.error("Invalid Email")
+      // toast.error("Invalid Email")
+      if (!toast.isActive(toastId)) {
+        toast.error("Invalid Email", { toastId });
+      }
     }
     else if(password !=cpassword){
       toast.error("password not match")
