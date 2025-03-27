@@ -19,6 +19,9 @@ import { Protected, ProtectedAdmin } from './features/hiddenlinks'
 import Checkout from './features/Checkout'
 import CheckoutPayment from './features/CheckoutPayment'
 import ThankYou from './features/ThankYou'
+import OrderDetails from './features/Admin/OrderDetails'
+import MyOrders from './features/MyOrders'
+import MyOrderDetails from './features/MyOrderDetails'
 
 const Routing = () => {
   return (
@@ -34,15 +37,18 @@ const Routing = () => {
                 <Route path='checkout' element={<Protected><Checkout/> </Protected>}/>
                 <Route path='checkoutpayment' element={<Protected><CheckoutPayment/> </Protected>}/>
                 <Route path='thankyou' element={<ThankYou/>}/>
-
+                <Route path='myorders' element={<Protected><MyOrders/> </Protected>}/>
+                <Route path='myorder/details/:id' element={<Protected><MyOrderDetails/> </Protected>}/>
             </Route>
             <Route path='login' element={<Login/>}/>
 
             <Route path='admin' element={<ProtectedAdmin><AdminLayout/></ProtectedAdmin>}>
                 <Route index element={<Dashboard/>}/>
                 <Route path='add' element={<AddProduct/>}/>
+                <Route path='edit/product/:id' element={<AddProduct/>}/>
                 <Route path='view' element={<ViewProduct/>}/>
                 <Route path='orders' element={<Orders/>}/>
+                <Route path='order/details/:id' element={<OrderDetails/>}/>
 
             </Route>
         </Route>

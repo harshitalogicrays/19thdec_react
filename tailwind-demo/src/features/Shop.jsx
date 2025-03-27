@@ -3,16 +3,22 @@ import ProductsCard from './ProductsCard'
 import { getData } from '../Apis'
 import Loader from './Loader'
 import ProductItem from './ProductItem'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectproduct, store_products } from '../redux/productSice'
 
 const Shop = () => {
-const [products,setProducts] = useState([])
+  const dispatch =  useDispatch()
+  useEffect(()=>{fetchdata()},[])   
+const fetchdata = async()=>{
+  try{
+    const res =  await fetch(`${import.meta.env.VITE_BASE_URL}/products`)
+    const data =  await res.json()
+    dispatch(store_products(data))
+ }
+ catch(err){toast.error(err.message)}
+}
 
-useEffect(()=>{
-  getData("https://dummyjson.com/products").then((result)=>{
-    console.log(result.products)
-   setProducts(result.products)
-  })
-},[])
+const products =  useSelector(selectproduct)
 
   return (
     <>

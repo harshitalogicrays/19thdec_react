@@ -1,7 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectorder, store_orders } from '../../redux/orderSlice'
+import { useNavigate } from 'react-router'
 
 const Orders = () => {
-  const orders = []
+  const dispatch =  useDispatch()
+  const navigate = useNavigate()
+
+  useEffect(()=>{fetchdata()},[])   
+const fetchdata = async()=>{
+  try{
+    const res =  await fetch(`${import.meta.env.VITE_BASE_URL}/orders`)
+    const data =  await res.json()
+    dispatch(store_orders(data))
+ }
+ catch(err){toast.error(err.message)}
+}
+const orders =  useSelector(selectorder)
   return (
     <div className="max-w-7xl mx-auto mt-4 p-6 bg-white shadow-md rounded-lg">
     <h2 className="text-2xl font-bold mb-4 text-gray-800">Orders</h2>
@@ -41,15 +56,16 @@ const Orders = () => {
             <tr key={index}
               className={`border-b ${index % 2 != 0 ? "bg-gray-50" : "bg-white"
                 }`} >
-              <td  className="px-6 py-4 text-sm text-gray-700"></td>
-              <td  className="px-6 py-4 text-sm text-gray-700"></td>
+              <td  className="px-6 py-4 text-sm text-gray-700">{order.id}</td>
+              <td  className="px-6 py-4 text-sm text-gray-700">{order.username}</td>
 
-              <td className="px-6 py-4 text-sm text-gray-700"></td>
-              <td className="px-6 py-4 text-sm text-gray-700"> &#8377;  </td>
-              <td className="px-6 py-4 text-sm text-gray-700"></td>
-              <td className="px-6 py-4 text-sm text-gray-700"></td>
+              <td className="px-6 py-4 text-sm text-gray-700">{order.orderDate} at {order.orderTime}</td>
+              <td className="px-6 py-4 text-sm text-gray-700"> &#8377; {order.total} </td>
+              <td className="px-6 py-4 text-sm text-gray-700">{order.paymentMethod}</td>
+              <td className="px-6 py-4 text-sm text-gray-700"><span className={`${order.orderStatus != 'delivered' ?'text-red-700' :'text-green-600' }`}>{order.orderStatus}</span> </td>
                 <td className="px-6 py-4 text-sm text-gray-700">
-                <button type="button" className='me-2 bg-blue-400 text-white p-3 rounded-md '>View</button>
+                <button type="button" className='me-2 bg-blue-400 text-white p-3 rounded-md '
+                onClick={()=>navigate(`/admin/order/details/${order.id}`)}>View</button>
                </td>
             
             </tr>

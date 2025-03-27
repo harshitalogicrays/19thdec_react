@@ -5,11 +5,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { selectproduct, store_products } from '../../redux/productSice'
 import { toast } from 'react-toastify'
 import axios from 'axios'
+import { Link } from 'react-router'
 
 const ViewProduct = () => {
   const dispatch =  useDispatch()
-  const [isDeleted,setIsDeleleted] = useState(false)
-  useEffect(()=>{fetchdata()},[isDeleted])
+  useEffect(()=>{fetchdata()},[])   
 const fetchdata = async()=>{
   try{
     const res =  await fetch(`${import.meta.env.VITE_BASE_URL}/products`)
@@ -21,11 +21,14 @@ const fetchdata = async()=>{
 
 const products =  useSelector(selectproduct)
   const handleDelete = async(id)=>{
+    if(window.confirm('are you sure to delete this??')){
       try{
         await axios.delete(`${import.meta.env.VITE_BASE_URL}/products/${id}`)
-        // setIsDeleleted(!isDeleted)
+        const filterproducts =  products.filter(item=>item.id != id)
+        dispatch(store_products(filterproducts))
       }
       catch(err){toast.error(err.message)}
+    }
   }
   return (
     <div className="max-w-4xl mx-auto mt-2 p-6 bg-white shadow-md rounded-lg">
@@ -60,12 +63,10 @@ const products =  useSelector(selectproduct)
         <tbody>
           {products.length==0 &&   <tr>  <td colSpan="6"
                 className="px-6 py-4 text-center text-sm text-gray-500"  >
-                No Product added. </td> </tr>}
-        
+                No Product added. </td> </tr>} 
            {products.map((product, index) =>
             <tr key={index}
-              className={`border-b ${index % 2 != 0 ? "bg-gray-50" : "bg-white"
-                }`} >
+              className={`border-b ${index % 2 != 0 ? "bg-gray-50" : "bg-white" }`} >
               <td  className="px-6 py-4 text-sm text-gray-700">{index+1}</td>
               <td className="px-6 py-4 text-sm text-gray-700"> {product.category}  </td>
               <td className="px-6 py-4 text-sm text-gray-700"> {product.title}  </td>
@@ -78,7 +79,8 @@ const products =  useSelector(selectproduct)
                 <td className="px-6 py-4 text-sm text-gray-700">
                 {product.stock} </td>
               <td className="px-6 py-4 text-sm text-gray-700">
-              <button type="button" className='me-2 bg-green-400 text-white p-3 rounded-md '><FaPenAlt/></button>            
+                <Link to={`/admin/edit/product/${product.id}`}>
+              <button  type="button" className='me-2 bg-green-400 text-white p-3 rounded-md '><FaPenAlt/></button>      </Link>      
               <button type="button"  className='me-2 bg-red-400 text-white p-3 rounded-md ' 
               onClick={()=>handleDelete(product.id)}><FaTrashAlt/></button>
                </td>

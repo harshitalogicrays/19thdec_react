@@ -5,7 +5,7 @@ import { toast } from 'react-toastify'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectAddress } from '../redux/checkoutSlice'
 import { Navigate, useNavigate } from 'react-router'
-import { emptycart } from '../redux/cartSlice'
+import { emptycart, selectCart, selectTotal } from '../redux/cartSlice'
 import {loadStripe} from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js'
 import StripePayment from './StripePayment'
@@ -18,7 +18,8 @@ const CheckoutPayment = () => {
   const [paymentMethod ,setPaymentMethod] = useState('')
   const [clientSecret ,setClientSecret] = useState('')
 
-  const {cartItems ,total } = useSelector(state=>state.cart)
+  const cartItems  = useSelector(selectCart)
+  const total =  useSelector(selectTotal)
   const shippingAddress =  useSelector(selectAddress)
   const {username,email} = JSON.parse(sessionStorage.getItem("19thdec"))
 
@@ -27,14 +28,15 @@ const CheckoutPayment = () => {
       await axios.post(`${import.meta.env.VITE_BASE_URL}/orders`,{cartItems,total ,shippingAddress ,username, email , orderStatus:'placed' , orderDate:new Date().toLocaleDateString() , orderTime: new Date().toLocaleTimeString() ,paymentMethod:"cod", createdAt:new Date()} )
       
       // update product stock
-      dispatch(emptycart())
-      toast.success("order placed successfully")
+
+      // toast.success("order placed successfully")
       redirect('/thankyou')
+      // dispatch(emptycart())
   }
   catch(err){toast.error(err.message)}
   }
-useEffect(()=>{
-  if(paymentMethod=='online'){ handleStripe()} },[paymentMethod])
+// useEffect(()=>{
+//   if(paymentMethod=='online'){ handleStripe()} },[paymentMethod])
 
 const handleStripe = async()=>{
   try{
@@ -69,7 +71,7 @@ const handleStripe = async()=>{
               </div>
            {paymentMethod=="cod" &&
           <div className="flex mt-6 space-x-4">
-              <button className="bg-blue-600 text-white py-2 px-6 rounded-md hover:bg-blue-700 cursor-pointer" 
+              <button type="button" className="bg-blue-600 text-white py-2 px-6 rounded-md hover:bg-blue-700 cursor-pointer" 
                 onClick={handleCODOrder}
                 >
                 Place Order

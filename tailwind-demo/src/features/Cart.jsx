@@ -45,7 +45,7 @@ const Cart = () => {
         {cartItems.map((item) => (
           <tr key={item.id} className="border-b border-gray-200">
             <td className="p-4 flex items-center gap-4">
-              <img src={item.images[0]} alt={item.title} className="w-16 h-16 object-cover rounded-lg" />
+              <img src={item?.image} alt={item.title} className="w-16 h-16 object-cover rounded-lg" />
               <span className="text-gray-800 font-medium">{item.title}</span>
             </td>
             <td className="p-4 text-center">

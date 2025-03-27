@@ -1,15 +1,29 @@
 import axios from 'axios'
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router'
+import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
+import { useNavigate, useParams } from 'react-router'
 import { toast } from 'react-toastify'
+import { selectproduct } from '../../redux/productSice'
 
 const AddProduct = () => {
+  const obj = {title:'',category:'',price:'',stock:'',image:'',brand:'',description:''}
   const categories = ["men's clothing","women's clothing","grocery","furniture","electronics"]
-  let [product,setProduct] = useState({title:'',category:'',price:'',stock:'',image:'',brand:'',description:''})
+  let [product,setProduct] = useState({...obj})
   const [pic,setPic] = useState()
   const [picLoading,setPicLoading] = useState(false)
-  const redirect =  useNavigate()
+  const navigate =  useNavigate()
 
+//edit 
+const {id} =  useParams() //params:{id:6984}
+const products =  useSelector(selectproduct)
+const productEdit =  products.find((item)=>item.id==id)
+useEffect(()=>{
+  if(id){setProduct({...productEdit});setPic(productEdit.image)}
+  else {setProduct({...obj});setPic('')} 
+},[id])
+
+/////////
+ 
   const handleImage = async(e)=>{
     // const images  =  e.target.files //[{},{},{}]
     // Array.from(images).forEach((img)=>{ })
@@ -39,17 +53,28 @@ const AddProduct = () => {
   }
 
   const handleSubmit = async(e)=>{
-    e.preventDefault()
-    try{    
-      await axios.post(`${import.meta.env.VITE_BASE_URL}/products`,{...product ,image:pic ,createdAt:new Date()} ) 
-      toast.success("product added")
-      redirect('/admin/view')
-  }
-  catch(err){toast.error(err.message)}
+    e.preventDefault();
+    if(!id){//add
+      try{    
+        await axios.post(`${import.meta.env.VITE_BASE_URL}/products`,{...product ,image:pic ,createdAt:new Date()} ) 
+        toast.success("product added")
+        navigate('/admin/view');
+    }
+    catch(err){toast.error(err.message)}
+      }
+    else{//update
+      try{    
+        await axios.put(`${import.meta.env.VITE_BASE_URL}/products/${id}`,{...product ,image:pic ,editedAt:new Date()} ) 
+        toast.success("product updated")
+        navigate('/admin/view');
+    }
+    catch(err){toast.error(err.message)}
+    }
+   
   }
   return (
     <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6">
-    <h2 className="text-2xl font-semibold mb-4">Add Product</h2>
+    <h2 className="text-2xl font-semibold mb-4">{id ? "Edit " :"Add "} Product</h2>
     <form className="space-y-4" onSubmit={handleSubmit}> 
       <div className="flex  gap-4">
         <div className=" flex-1">
@@ -85,7 +110,7 @@ const AddProduct = () => {
             className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 mb-3 focus:ring-blue-500" onChange = {handleImage}
             placeholder="Enter image URL"
           />
-          {pic && <img src={pic} height={100} width={100} />}
+          {pic && <img src={pic} height={80} width={100} />}
         </div></div>
       <div className="flex gap-4">
         <div className="flex-1">
@@ -117,7 +142,9 @@ const AddProduct = () => {
         className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
       >
         {picLoading ? 
-        <div class="animate-spin w-10 h-10 mx-auto border-4 border-t-transparent border-white rounded-full " ></div> : "Add Product"}
+        <div class="animate-spin w-10 h-10 mx-auto border-4 border-t-transparent border-white rounded-full " ></div> :
+        <>{id ? "Update" :"Submit"}</>
+        }
       </button>
     </form>
   </div>

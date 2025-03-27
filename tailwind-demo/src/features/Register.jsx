@@ -1,11 +1,12 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router'
 import { toast } from 'react-toastify'
 
 const Register = () => {
   const redirect = useNavigate()
   const [user,setUser] =useState({username:'',email:'',password:'',cpassword:'',role:'1'})
+
   const handleSubmit = async(e)=>{
     e.preventDefault()
     const toastId = "error-toast";
@@ -27,13 +28,13 @@ const Register = () => {
     }
     else {
       try{
-          // await fetch(`${import.meta.env.VITE_BASE_URL}/users` , {
-          //   method :"POST",
-          //   headers:{'content-type':'application/json'},
-          //   body:JSON.stringify({...user , createdAt:new Date()})
-          // })
+          await fetch(`${import.meta.env.VITE_BASE_URL}/users` , {
+            method :"POST",
+            headers:{'content-type':'application/json'},
+            body:JSON.stringify({...user , createdAt:new Date()})
+          })
           
-          await axios.post(`${import.meta.env.VITE_BASE_URL}/users`,{...user , createdAt:new Date()} )
+          // await axios.post(`${import.meta.env.VITE_BASE_URL}/users`,{...user , createdAt:new Date()} )
           
           toast.success("registered successfully")
           redirect('/login')

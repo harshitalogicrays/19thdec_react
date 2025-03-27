@@ -1,10 +1,10 @@
 import React from 'react'
-import { FaArrowCircleLeft } from 'react-icons/fa'
 import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router'
-import { selectorder } from '../../redux/orderSlice'
+import { selectorder } from '../redux/orderSlice'
+import { FaArrowCircleLeft } from 'react-icons/fa'
 
-const OrderDetails = () => {
+const MyOrderDetails = () => {
     const navigate = useNavigate()
     const {id} = useParams()
     const orders = useSelector(selectorder)
@@ -15,7 +15,7 @@ const OrderDetails = () => {
         <div className="flex justify-between">
         <h1 className="text-2xl font-bold mb-4">Order Details</h1>
         <div className="mb-3 w-50">
-        <button onClick={()=>navigate('/admin/orders')} className='flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition'>
+        <button onClick={()=>navigate('/myorders')} className='flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition'>
             <FaArrowCircleLeft /> Back to Orders
         </button>
     </div>
@@ -71,4 +71,4 @@ const OrderDetails = () => {
   )
 }
 
-export default OrderDetails
+export default MyOrderDetails

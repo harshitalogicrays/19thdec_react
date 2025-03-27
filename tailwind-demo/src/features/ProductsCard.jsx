@@ -11,17 +11,17 @@ const ProductsCard = ({ product }) => {
   return (
     <>
        <div key={product.id} className={`group relative p-4 rounded-md shadow-md bg-white transition-all duration-300 
-          ${product.stock === 0 ? "opacity-50  pointer-events-none" : "hover:shadow-lg"}`} >
+          ${product.stock == 0 ? "opacity-50  pointer-events-none" : "hover:shadow-lg"}`} >
          <Link to="/product/details" state={product} >
           <img
             alt={product.imageAlt}
-            src={product.images[0]}
+            src={product.image}
             className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-60"
           />
          <span
             className="absolute top-2 right-2 px-3 py-1 text-xs font-semibold rounded-md text-white"
-            style={{ backgroundColor: product.stock === 0 ? "red" : "green" }}>
-            {product.stock === 0 ? "Out of Stock" : "In Stock"}
+            style={{ backgroundColor: product.stock == 0 ? "red" : "green" }}>
+            {product.stock == 0 ? "Out of Stock" : "In Stock"}
           </span>
 
         
