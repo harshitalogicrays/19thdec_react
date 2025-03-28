@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink, Outlet, useNavigate } from 'react-router'
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { HiBars3, HiXMark } from 'react-icons/hi2'
@@ -26,6 +26,9 @@ const handleLogout = ()=>{
   }
 }
 const cartItems =  useSelector(selectCart)
+
+//search 
+const [search,setSearch] = useState('')
   return (
     <>
     <Disclosure as="nav" className="bg-gray-800">
@@ -60,7 +63,7 @@ const cartItems =  useSelector(selectCart)
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <div className='relative me-5 sm:block hidden'>
-              <input type="search" className='bg-gray-700 text-white rounded-full pl-10 py-1 pr-4 focus:outline-none focus:ring-2 focus:ring-white' placeholder='search here' name="search"/>
+              <input type="search" value={search} onChange={(e)=>setSearch(e.target.value)} className='bg-gray-700 text-white rounded-full pl-10 py-1 pr-4 focus:outline-none focus:ring-2 focus:ring-white' placeholder='search here' name="search"/>
               <HiSearch className='absolute left-3 top-2 w-5 h-5 text-gray-400'/>
             </div>
             <div className='hidden sm:block'>
@@ -151,7 +154,7 @@ const cartItems =  useSelector(selectCart)
             </div>
 
             <div className='relative me-5 block sm:hidden'>
-            <input type="search" className='bg-gray-700 text-white rounded-full pl-10 py-1 pr-4 focus:outline-none focus:ring-2 focus:ring-white' placeholder='search here' name="search"/>
+            <input type="search" value={search} onChange={(e)=>setSearch(e.target.value)} className='bg-gray-700 text-white rounded-full pl-10 py-1 pr-4 focus:outline-none focus:ring-2 focus:ring-white' placeholder='search here' name="search"/>
               <HiSearch className='absolute left-3 top-2 w-5 h-5 text-gray-400'/>
             </div>
         </div>

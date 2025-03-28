@@ -3,6 +3,7 @@ import { FaArrowCircleLeft } from 'react-icons/fa'
 import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router'
 import { selectorder } from '../../redux/orderSlice'
+import ChangeOrderStatus from './ChangeOrderStatus'
 
 const OrderDetails = () => {
     const navigate = useNavigate()
@@ -22,7 +23,12 @@ const OrderDetails = () => {
         </div>
     <hr className="mb-4" />
     <div className="flex justify-between me-20">
-    <h4 className='text-lg font-semibold text-blue-500'>Order Status: {order.orderStatus} </h4>  
+   
+        {order.orderStatus=='delivered' ?  <h4 className='text-lg font-semibold text-blue-500'> Order Status: {order.orderStatus}    </h4>  
+        : <ChangeOrderStatus order={order}/>    
+    }
+        
+
 
             <div className='mt-4'>
                 <b className="text-gray-700">Shipping Address</b><br />
