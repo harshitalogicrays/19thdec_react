@@ -19,58 +19,13 @@
       "createdAt": "2025-03-20T04:58:30.582Z"
     },
     {
-      "id": "b692",
-      "username": "meera",
-      "email": "meera@gmail.com",
-      "password": "meera123",
-      "cpassword": "meera123",
-      "role": "1",
-      "createdAt": "2025-03-27T03:33:43.092Z"
-    },
-    {
-      "id": "5cb3",
-      "username": "riya",
-      "email": "riya@gmail.com",
-      "password": "riya123",
-      "cpassword": "riya123",
-      "role": "1",
-      "createdAt": "2025-03-27T03:34:19.240Z"
-    },
-    {
-      "id": "48d1",
+      "id": "49ec",
       "username": "happy",
       "email": "happy@gmail.com",
       "password": "happy123",
       "cpassword": "happy123",
       "role": "1",
-      "createdAt": "2025-03-27T03:39:15.500Z"
-    },
-    {
-      "id": "f85a",
-      "username": "harshita",
-      "email": "harshita@gmail.com",
-      "password": "harshiuta",
-      "cpassword": "harshiuta",
-      "role": "1",
-      "createdAt": "2025-03-27T03:40:18.249Z"
-    },
-    {
-      "id": "9a95",
-      "username": "siya",
-      "email": "siya@gmail.com",
-      "password": "siya123",
-      "cpassword": "siya123",
-      "role": "1",
-      "createdAt": "2025-03-27T04:40:41.140Z"
-    },
-    {
-      "id": "5124",
-      "username": "ram1",
-      "email": "ram1@gmail.com",
-      "password": "ram123",
-      "cpassword": "ram123",
-      "role": "1",
-      "createdAt": "2025-03-27T10:57:31.483Z"
+      "createdAt": "2025-03-29T03:33:39.940Z"
     }
   ],
   "products": [

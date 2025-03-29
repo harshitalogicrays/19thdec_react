@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink, Outlet, useNavigate } from 'react-router'
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { HiBars3, HiXMark } from 'react-icons/hi2'
@@ -7,11 +7,14 @@ import { FaShoppingCart } from 'react-icons/fa'
 import Avatar from '/src/assets/avatar.png'
 import { toast } from 'react-toastify'
 import { ShowonLogin, ShowonLogout } from './hiddenlinks'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { selectCart } from '../redux/cartSlice'
+import { APPLY_FILTER } from '../redux/filterSlice'
+import { selectproduct, store_products } from '../redux/productSice'
 
 const Header = () => {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
   const navigation = [
     { name: 'Home', href: '/'},
     { name: 'About', href: '/about'},
@@ -28,7 +31,23 @@ const handleLogout = ()=>{
 const cartItems =  useSelector(selectCart)
 
 //search 
+const products =  useSelector(selectproduct)
+const {catVal,brandsVal, priceRange,searchVal } = useSelector(state=>state.filter)
+console.log(searchVal)
 const [search,setSearch] = useState('')
+  useEffect(()=>{fetchdata()},[])   
+const fetchdata = async()=>{
+  try{
+    const res =  await fetch(`${import.meta.env.VITE_BASE_URL}/products`)
+    const data =  await res.json()
+    dispatch(store_products(data))}
+ catch(err){toast.error(err.message)}}
+
+useEffect(()=>{
+  dispatch(APPLY_FILTER({
+    products , categories:catVal, brands:brandsVal , priceRange:priceRange , search:search
+  }))
+},[search ,catVal,brandsVal, priceRange])
   return (
     <>
     <Disclosure as="nav" className="bg-gray-800">
