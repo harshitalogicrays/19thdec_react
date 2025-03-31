@@ -1,5 +1,5 @@
-import React from 'react'
-import { Route, Routes } from 'react-router'
+import React, { useEffect } from 'react'
+import { Route, Routes, useLocation } from 'react-router'
 import App from './App'
 import Header from './features/Header'
 import Home from './features/Home'
@@ -23,8 +23,40 @@ import OrderDetails from './features/Admin/OrderDetails'
 import MyOrders from './features/MyOrders'
 import MyOrderDetails from './features/MyOrderDetails'
 
+
+const TitleUpdater = () => {
+    const location = useLocation();  
+    const validRoutes = [
+        "/", "/about", "/login", "/register", "/shop", "/cart",
+        "/product/details", "/checkout", "/checkoutpayment", "/thankyou",
+        "/myorders", "/myorder/details/:id", "/admin", "/admin/add",
+        "/admin/view", "/admin/orders", "/admin/order/details/:id"
+    ];
+
+    useEffect(() => {
+      const titles = {
+        "/": "E-Commerce", "/about": "About","/login":"Login Page",
+        "/register":"SignUp" ,'/shop':'Shop Now'
+      };
+      let newTitle = titles[location.pathname] || "E-Commerce";
+
+      const isValidRoute = validRoutes.some(route =>
+            location.pathname.startsWith(route)
+        );
+
+        if (!isValidRoute) {
+            newTitle = "Page Not Found";
+        }
+        document.title = newTitle;
+    }, [location]);
+  
+    return null;
+  };
+
 const Routing = () => {
   return (
+    <>
+          <TitleUpdater />
    <Routes>
         <Route path='/' element={<App/>}>
             <Route element={<Header/>}>
@@ -55,6 +87,7 @@ const Routing = () => {
         <Route path='*' element={<PageNotFound/>}/>
 
    </Routes>
+   </>
   )
 }
 

@@ -2,15 +2,24 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router'
 import { toast } from 'react-toastify'
+import emailjs from '@emailjs/browser';
 
 const ChangeOrderStatus = ({order}) => {
     const navigate = useNavigate()
     const [ostatus,setOStatus] = useState(order.orderStatus)
     const updateStatus = async()=>{
         try{    
-            await axios.put(`${import.meta.env.VITE_BASE_URL}/orders/${order.id}`,{...order , orderStatus:ostatus , editedAt:new Date()})
-            toast.success("order status updated")
-            navigate('/admin/orders')
+            const res  = await axios.put(`${import.meta.env.VITE_BASE_URL}/orders/${order.id}`,{...order , orderStatus:ostatus , editedAt:new Date()})
+            if(res.status==201 || res.status==200){
+              emailjs.send('service_i18a4kv', 'template_686qaqa', {status:res.data.orderStatus ,email:res.data.email ,payment:res.data.paymentMethod , orders:res.data.cartItems ,total:res.data.total ,id:res.data.id}, {
+                publicKey: 'Ir17coOALHBiw7W2W',
+              }).then(()=>{
+                toast.success("order status updated")
+                navigate('/admin/orders')
+              }).catch((err)=>toast.error(err.message))
+            } 
+           
+           
         }
         catch(err){toast.error(err.message)}
     }

@@ -41,7 +41,7 @@ const {searchVal , filterProducts} = useSelector(state=>state.filter)
 useEffect(()=>{
   dispatch(APPLY_FILTER({products ,  categories:selectedCategories,
      brands:selectedBrands , priceRange :price , search : searchVal}))
-},[selectedCategories , selectedBrands , price, searchVal ,products])
+},[selectedCategories , selectedBrands , price ,products])
 
 const resetFilter = ()=>{
   setSelectedBrands([]);setSelectedCategories([]);selectPrice([0,10000])

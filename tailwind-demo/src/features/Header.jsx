@@ -33,8 +33,10 @@ const cartItems =  useSelector(selectCart)
 //search 
 const products =  useSelector(selectproduct)
 const {catVal,brandsVal, priceRange,searchVal } = useSelector(state=>state.filter)
-console.log(searchVal)
 const [search,setSearch] = useState('')
+useEffect(() => {
+  setSearch(searchVal);
+}, [searchVal]); 
   useEffect(()=>{fetchdata()},[])   
 const fetchdata = async()=>{
   try{
@@ -47,7 +49,8 @@ useEffect(()=>{
   dispatch(APPLY_FILTER({
     products , categories:catVal, brands:brandsVal , priceRange:priceRange , search:search
   }))
-},[search ,catVal,brandsVal, priceRange])
+},[search])
+
   return (
     <>
     <Disclosure as="nav" className="bg-gray-800">

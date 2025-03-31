@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 import { emptycart } from '../redux/cartSlice'
 import axios from 'axios'
 import { selectAddress } from '../redux/checkoutSlice'
-
+import emailjs from '@emailjs/browser';
 const StripePayment = ({clientSecret}) => {
   const stripe = useStripe()
   const elements =  useElements()
@@ -42,10 +42,22 @@ const StripePayment = ({clientSecret}) => {
     try{
       await axios.post(`${import.meta.env.VITE_BASE_URL}/orders`,{cartItems,total ,shippingAddress ,username, email , orderStatus:'placed' , orderDate:new Date().toLocaleDateString() , orderTime: new Date().toLocaleTimeString() ,paymentMethod:"online", createdAt:new Date()} )  
       // update product stock
-      dispatch(emptycart())
-      toast.success("order placed successfully")
-      redirect('/thankyou')
-  }
+      await Promise.all(
+        cartItems.map(async (item) => {
+          await axios.put(`${import.meta.env.VITE_BASE_URL}/products/${item.id}`, {...item,
+            stock: item.stock - item.qty,  
+          });
+        })
+      )
+      if(res.status==201 || res.status==200){
+        emailjs.send('service_i18a4kv', 'template_686qaqa', {status:res.data.orderStatus ,email:res.data.email ,payment:res.data.paymentMethod , orders:res.data.cartItems ,total:res.data.total ,id:res.data.id}, {
+          publicKey: 'Ir17coOALHBiw7W2W',
+        }).then(()=>{
+            toast.success("order placed successfully")
+            redirect('/thankyou')
+            dispatch(emptycart())
+        }).catch((err)=>toast.error(err.message))
+      }  }
   catch(err){toast.error(err.message)}
   }
   return (

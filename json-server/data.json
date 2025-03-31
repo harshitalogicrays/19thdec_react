@@ -26,6 +26,15 @@
       "cpassword": "happy123",
       "role": "1",
       "createdAt": "2025-03-29T03:33:39.940Z"
+    },
+    {
+      "id": "f971",
+      "username": "pranab",
+      "email": "pranab.sahoo135@gmail.com",
+      "password": "123456",
+      "cpassword": "123456",
+      "role": "1",
+      "createdAt": "2025-03-31T05:29:40.552Z"
     }
   ],
   "products": [
@@ -34,24 +43,26 @@
       "title": "product2",
       "category": "grocery",
       "price": "131",
-      "stock": "2",
+      "stock": 1,
       "image": "http://res.cloudinary.com/harshita1/image/upload/v1743051597/19thdecreact/pkjrlvv7yp8vwsemnzzd.jpg",
       "brand": "dfcsd",
       "description": "wsdsf",
       "createdAt": "2025-03-26T10:11:14.427Z",
-      "editedAt": "2025-03-27T05:00:09.160Z"
+      "editedAt": "2025-03-27T05:00:09.160Z",
+      "qty": 1
     },
     {
       "id": "b84b",
       "title": "product1",
       "category": "women's clothing",
       "price": "1000",
-      "stock": "11",
+      "stock": 9,
       "image": "http://res.cloudinary.com/harshita1/image/upload/v1742984317/19thdecreact/e5emafyav7j8lomi6vw1.png",
       "brand": "sdfs",
       "description": "sfs",
       "createdAt": "2025-03-26T10:18:41.674Z",
-      "editedAt": "2025-03-27T04:59:40.472Z"
+      "editedAt": "2025-03-27T04:59:40.472Z",
+      "qty": 2
     },
     {
       "id": "5796",
@@ -618,6 +629,252 @@
       "orderTime": "11:07:47 AM",
       "paymentMethod": "cod",
       "createdAt": "2025-03-27T05:37:47.689Z"
+    },
+    {
+      "id": "9b5c",
+      "cartItems": [
+        {
+          "id": "6984",
+          "title": "product2",
+          "category": "grocery",
+          "price": "131",
+          "stock": "2",
+          "image": "http://res.cloudinary.com/harshita1/image/upload/v1743051597/19thdecreact/pkjrlvv7yp8vwsemnzzd.jpg",
+          "brand": "dfcsd",
+          "description": "wsdsf",
+          "createdAt": "2025-03-26T10:11:14.427Z",
+          "editedAt": "2025-03-27T05:00:09.160Z",
+          "qty": 1
+        },
+        {
+          "id": "b84b",
+          "title": "product1",
+          "category": "women's clothing",
+          "price": "1000",
+          "stock": "11",
+          "image": "http://res.cloudinary.com/harshita1/image/upload/v1742984317/19thdecreact/e5emafyav7j8lomi6vw1.png",
+          "brand": "sdfs",
+          "description": "sfs",
+          "createdAt": "2025-03-26T10:18:41.674Z",
+          "editedAt": "2025-03-27T04:59:40.472Z",
+          "qty": 2
+        }
+      ],
+      "total": 2131,
+      "shippingAddress": {
+        "name": "werqw",
+        "mobile": "131",
+        "address1": "1313",
+        "address2": "131",
+        "city": "131",
+        "state": "313",
+        "country": "313",
+        "pincode": "1313"
+      },
+      "username": "pranab",
+      "email": "pranab.sahoo135@gmail.com",
+      "orderStatus": "placed",
+      "orderDate": "3/31/2025",
+      "orderTime": "11:00:31 AM",
+      "paymentMethod": "cod",
+      "createdAt": "2025-03-31T05:30:31.629Z"
+    },
+    {
+      "id": "382d",
+      "cartItems": [
+        {
+          "id": "6984",
+          "title": "product2",
+          "category": "grocery",
+          "price": "131",
+          "stock": "2",
+          "image": "http://res.cloudinary.com/harshita1/image/upload/v1743051597/19thdecreact/pkjrlvv7yp8vwsemnzzd.jpg",
+          "brand": "dfcsd",
+          "description": "wsdsf",
+          "createdAt": "2025-03-26T10:11:14.427Z",
+          "editedAt": "2025-03-27T05:00:09.160Z",
+          "qty": 1
+        },
+        {
+          "id": "b84b",
+          "title": "product1",
+          "category": "women's clothing",
+          "price": "1000",
+          "stock": "11",
+          "image": "http://res.cloudinary.com/harshita1/image/upload/v1742984317/19thdecreact/e5emafyav7j8lomi6vw1.png",
+          "brand": "sdfs",
+          "description": "sfs",
+          "createdAt": "2025-03-26T10:18:41.674Z",
+          "editedAt": "2025-03-27T04:59:40.472Z",
+          "qty": 2
+        }
+      ],
+      "total": 2131,
+      "shippingAddress": {
+        "name": "werqw",
+        "mobile": "131",
+        "address1": "1313",
+        "address2": "131",
+        "city": "131",
+        "state": "313",
+        "country": "313",
+        "pincode": "1313"
+      },
+      "username": "pranab",
+      "email": "pranab.sahoo135@gmail.com",
+      "orderStatus": "placed",
+      "orderDate": "3/31/2025",
+      "orderTime": "11:01:40 AM",
+      "paymentMethod": "cod",
+      "createdAt": "2025-03-31T05:31:40.117Z"
+    },
+    {
+      "id": "5db3",
+      "cartItems": [
+        {
+          "id": "6984",
+          "title": "product2",
+          "category": "grocery",
+          "price": "131",
+          "stock": "2",
+          "image": "http://res.cloudinary.com/harshita1/image/upload/v1743051597/19thdecreact/pkjrlvv7yp8vwsemnzzd.jpg",
+          "brand": "dfcsd",
+          "description": "wsdsf",
+          "createdAt": "2025-03-26T10:11:14.427Z",
+          "editedAt": "2025-03-27T05:00:09.160Z",
+          "qty": 1
+        },
+        {
+          "id": "b84b",
+          "title": "product1",
+          "category": "women's clothing",
+          "price": "1000",
+          "stock": "11",
+          "image": "http://res.cloudinary.com/harshita1/image/upload/v1742984317/19thdecreact/e5emafyav7j8lomi6vw1.png",
+          "brand": "sdfs",
+          "description": "sfs",
+          "createdAt": "2025-03-26T10:18:41.674Z",
+          "editedAt": "2025-03-27T04:59:40.472Z",
+          "qty": 2
+        }
+      ],
+      "total": 2131,
+      "shippingAddress": {
+        "name": "werqw",
+        "mobile": "131",
+        "address1": "1313",
+        "address2": "131",
+        "city": "131",
+        "state": "313",
+        "country": "313",
+        "pincode": "1313"
+      },
+      "username": "pranab",
+      "email": "pranab.sahoo135@gmail.com",
+      "orderStatus": "placed",
+      "orderDate": "3/31/2025",
+      "orderTime": "11:02:32 AM",
+      "paymentMethod": "cod",
+      "createdAt": "2025-03-31T05:32:32.880Z"
+    },
+    {
+      "id": "b305",
+      "cartItems": [
+        {
+          "id": "6984",
+          "title": "product2",
+          "category": "grocery",
+          "price": "131",
+          "stock": "2",
+          "image": "http://res.cloudinary.com/harshita1/image/upload/v1743051597/19thdecreact/pkjrlvv7yp8vwsemnzzd.jpg",
+          "brand": "dfcsd",
+          "description": "wsdsf",
+          "createdAt": "2025-03-26T10:11:14.427Z",
+          "editedAt": "2025-03-27T05:00:09.160Z",
+          "qty": 1
+        },
+        {
+          "id": "b84b",
+          "title": "product1",
+          "category": "women's clothing",
+          "price": "1000",
+          "stock": "11",
+          "image": "http://res.cloudinary.com/harshita1/image/upload/v1742984317/19thdecreact/e5emafyav7j8lomi6vw1.png",
+          "brand": "sdfs",
+          "description": "sfs",
+          "createdAt": "2025-03-26T10:18:41.674Z",
+          "editedAt": "2025-03-27T04:59:40.472Z",
+          "qty": 2
+        }
+      ],
+      "total": 2131,
+      "shippingAddress": {
+        "name": "werqw",
+        "mobile": "131",
+        "address1": "1313",
+        "address2": "131",
+        "city": "131",
+        "state": "313",
+        "country": "313",
+        "pincode": "1313"
+      },
+      "username": "pranab",
+      "email": "pranab.sahoo135@gmail.com",
+      "orderStatus": "placed",
+      "orderDate": "3/31/2025",
+      "orderTime": "11:02:42 AM",
+      "paymentMethod": "cod",
+      "createdAt": "2025-03-31T05:32:42.050Z"
+    },
+    {
+      "id": "91fd",
+      "cartItems": [
+        {
+          "id": "6984",
+          "title": "product2",
+          "category": "grocery",
+          "price": "131",
+          "stock": "2",
+          "image": "http://res.cloudinary.com/harshita1/image/upload/v1743051597/19thdecreact/pkjrlvv7yp8vwsemnzzd.jpg",
+          "brand": "dfcsd",
+          "description": "wsdsf",
+          "createdAt": "2025-03-26T10:11:14.427Z",
+          "editedAt": "2025-03-27T05:00:09.160Z",
+          "qty": 1
+        },
+        {
+          "id": "b84b",
+          "title": "product1",
+          "category": "women's clothing",
+          "price": "1000",
+          "stock": "11",
+          "image": "http://res.cloudinary.com/harshita1/image/upload/v1742984317/19thdecreact/e5emafyav7j8lomi6vw1.png",
+          "brand": "sdfs",
+          "description": "sfs",
+          "createdAt": "2025-03-26T10:18:41.674Z",
+          "editedAt": "2025-03-27T04:59:40.472Z",
+          "qty": 2
+        }
+      ],
+      "total": 2131,
+      "shippingAddress": {
+        "name": "werqw",
+        "mobile": "131",
+        "address1": "1313",
+        "address2": "131",
+        "city": "131",
+        "state": "313",
+        "country": "313",
+        "pincode": "1313"
+      },
+      "username": "pranab",
+      "email": "pranab.sahoo135@gmail.com",
+      "orderStatus": "delivered",
+      "orderDate": "3/31/2025",
+      "orderTime": "11:03:17 AM",
+      "paymentMethod": "cod",
+      "createdAt": "2025-03-31T05:33:17.268Z",
+      "editedAt": "2025-03-31T05:36:08.082Z"
     }
   ]
 }

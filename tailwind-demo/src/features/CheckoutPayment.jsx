@@ -9,6 +9,7 @@ import { emptycart, selectCart, selectTotal } from '../redux/cartSlice'
 import {loadStripe} from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js'
 import StripePayment from './StripePayment'
+import emailjs from '@emailjs/browser';
 
 const stripe =  loadStripe(`${import.meta.env.VITE_STRIPE_PK}`)
 
@@ -25,13 +26,31 @@ const CheckoutPayment = () => {
 
   const handleCODOrder = async()=>{
     try{
-      await axios.post(`${import.meta.env.VITE_BASE_URL}/orders`,{cartItems,total ,shippingAddress ,username, email , orderStatus:'placed' , orderDate:new Date().toLocaleDateString() , orderTime: new Date().toLocaleTimeString() ,paymentMethod:"cod", createdAt:new Date()} )
+     let res =  await axios.post(`${import.meta.env.VITE_BASE_URL}/orders`,{cartItems,total ,shippingAddress ,username, email , orderStatus:'placed' , orderDate:new Date().toLocaleDateString() , orderTime: new Date().toLocaleTimeString() ,paymentMethod:"cod", createdAt:new Date()} )
       
       // update product stock
+      // await Promise.all(
+      //   cartItems.map(async (item) => {
+      //     await axios.put(`${import.meta.env.VITE_BASE_URL}/products/${item.id}`, {...item,
+      //       stock: item.stock - item.qty,  
+      //     });
+      //   })
+      // )
 
-      // toast.success("order placed successfully")
-      redirect('/thankyou')
-      // dispatch(emptycart())
+      //email 
+    console.log(res)
+  console.log( {status:res.orderStatus ,email:res.email ,payment:res.paymentMethod , orders:res.cartItems ,total:res.total ,id:res.id}
+    
+  )
+  if(res.status==201 || res.status==200){
+    emailjs.send('service_i18a4kv', 'template_686qaqa', {status:res.data.orderStatus ,email:res.data.email ,payment:res.data.paymentMethod , orders:res.data.cartItems ,total:res.data.total ,id:res.data.id}, {
+      publicKey: 'Ir17coOALHBiw7W2W',
+    }).then(()=>{
+        toast.success("order placed successfully")
+        redirect('/thankyou')
+        dispatch(emptycart())
+    }).catch((err)=>toast.error(err.message))
+  }
   }
   catch(err){toast.error(err.message)}
   }
