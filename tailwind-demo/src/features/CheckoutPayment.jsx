@@ -29,13 +29,13 @@ const CheckoutPayment = () => {
      let res =  await axios.post(`${import.meta.env.VITE_BASE_URL}/orders`,{cartItems,total ,shippingAddress ,username, email , orderStatus:'placed' , orderDate:new Date().toLocaleDateString() , orderTime: new Date().toLocaleTimeString() ,paymentMethod:"cod", createdAt:new Date()} )
       
       // update product stock
-      // await Promise.all(
-      //   cartItems.map(async (item) => {
-      //     await axios.put(`${import.meta.env.VITE_BASE_URL}/products/${item.id}`, {...item,
-      //       stock: item.stock - item.qty,  
-      //     });
-      //   })
-      // )
+      await Promise.all(
+        cartItems.map(async (item) => {
+          await axios.put(`${import.meta.env.VITE_BASE_URL}/products/${item.id}`, {...item,
+            stock: item.stock - item.qty,  
+          });
+        })
+      )
 
       //email 
     console.log(res)
@@ -54,8 +54,8 @@ const CheckoutPayment = () => {
   }
   catch(err){toast.error(err.message)}
   }
-// useEffect(()=>{
-//   if(paymentMethod=='online'){ handleStripe()} },[paymentMethod])
+useEffect(()=>{
+  if(paymentMethod=='online'){ handleStripe()} },[paymentMethod])
 
 const handleStripe = async()=>{
   try{
